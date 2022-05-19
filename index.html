@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordpress Dev Test</title>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="wrap">
+        <!---------------------------------- Navigation ---------------------------------->
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="GMN logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                </ul>
+                
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!------------------- Slider -------------------->
+        
+            <div id="arrow-left" class="arrow"></div>
+            <div class="silder">
+
+                <div class="slide slide1">
+                    <div class="slide-content">
+                        <h1>Free Your Imagination</h1>
+            <p>Accelerating your growth with amazing Solutions</p>
+                    </div>
+                </div>
+
+                <div class="slide slide2">
+                    <div class="slide-content">
+                        <h1>Create A New Reality</h1>
+            <p>Accelerating your growth with amazing Solutions</p>
+                    </div>
+                </div>
+
+                <div class="slide slide3">
+                    <div class="slide-content">
+                        <h1>Live Your Fairytale</h1>
+            <p>Accelerating your growth with amazing Solutions</p>
+                    </div>
+                </div>
+
+            </div>
+            <div id="arrow-right" class="arrow"></div>
+        </div>
+    </header>
+
+<!--------------Services-------------->
+
+<section class="services">
+    
+    <div class="service-list">
+        <div class="more">
+            <div class="img-column">
+              <img src="images/cafeteria.png" alt="Snow" style="width:100%">
+            </div>
+            <div class="list-column">
+                
+                <h1>Services We Offer</h1>
+    <p>We can help you with your business strategy, architecture, mapping, and optimisation.</p>
+              <ul>
+              <li>Graphic Design</li>
+              <li>Web Design</li>
+              <li>SEO</li>
+              <li>App Dev</li>
+              <li>Illustration</li>
+              <li>Photo Manipulation</li>
+              <li>UX Design</li>
+              <li>UI Design</li>
+              </ul>
+           
+            </div>
+    </div>
+    <div class="row">
+        <div class="services-col">
+            <h3>Business Strategy</h3>
+            <p>In order to achieve operational excellence a clear identification of business strategy is 
+                essential.</p>
+        </div>
+        <div class="services-col">
+            <h3>Map Business Processes</h3>
+            <p>In order to achieve operational excellence a clear identification of business strategy is 
+                essential.</p>
+        </div>
+        <div class="services-col">
+            <h3>Improve Business Processes</h3>
+            <p>In order to achieve operational excellence a clear identification of business strategy is 
+                essential.</p>
+        </div>
+    </div>
+
+  
+
+ </section>
+
+ <!-------------- Call to action -------------->
+
+<section class="cta">
+    <h1>Don't be shy. </h1>
+    <a href="" class="cta-btn">Get in Touch</a>
+</section>
+
+<!------------------- Footer ------------------->
+
+<section class="footer">
+    <div class="footer-links">
+        <h4>Quick Links</h4>
+        <div class="footer-nav-links" id="navLinks">
+            <ul>
+                <li><a href="">Submit an Idea</a></li>
+                <li><a href="">Suggestion</a></li>
+                <li><a href="">Terms and Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="copy">
+        <div>
+            <p>Copyright &copy; <span id="year"></span><script>document.write(new Date().getFullYear())</script> F_dot Trading All Rights Reserved</p>
+        </div>
+        <div>
+            <p>Powered by <a href="">F_dot</a></p>
+        </div>
+    </div>
+
+
+
+
+<script>
+
+// mobile navigation toggles
+
+var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0"
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px"
+        }
+
+// ------------------------------------ Image Slider ---------------------------------------//
+    let sliderImages = document.querySelectorAll('.slide'),
+        arrowLeft = document.querySelector('#arrow-left'),
+        arrowRight = document.querySelector('#arrow-right'),
+        current = 0;
+
+        // clear all the images
+function reset(){
+    for(let i = 0; i < sliderImages.length; i++){
+        sliderImages[i].style.display = 'none';
+    }
+}
+
+function startSlide(){
+    reset();
+    sliderImages[0].style.display = 'block';
+}
+
+// show prev / Slide left
+function slideLeft(){
+    reset();
+    sliderImages[current - 1].style.display = 'block';
+    current--;
+}
+
+// show next / Slide right
+function slideRight(){
+    reset();
+    sliderImages[current + 1].style.display = 'block';
+    current++
+}
+
+// left arrow click
+arrowLeft.addEventListener('click',function(){
+    if(current === 0){
+        current = sliderImages.length;
+    }
+    slideLeft();
+});
+
+// right arrow click
+arrowRight.addEventListener('click',function(){
+    if(current === sliderImages.length - 1){
+        current = -1;
+    }
+    slideRight();
+})
+
+
+startSlide();
+    
+</script>
+
+</body>
+</html>
