@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <header class="header">
+    <header id="home" class="header">
         <div class="wrap">
         <!---------------------------------- Navigation ---------------------------------->
         <nav>
@@ -18,9 +18,9 @@
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#cta">Contact Us</a></li>
                 </ul>
                 
             </div>
@@ -57,10 +57,10 @@
             <div id="arrow-right" class="arrow"></div>
         </div>
     </header>
-
+    <a href="#home"><button id="scrollToTopBtn">☝️</button></a>
 <!--------------Services-------------->
 
-<section class="services">
+<section id="services" class="services">
     
     <div class="service-list">
         <div class="more">
@@ -108,9 +108,10 @@
 
  <!-------------- Call to action -------------->
 
-<section class="cta">
+<section id="cta" class="cta">
     <h1>Don't be shy. </h1>
     <a href="" class="cta-btn">Get in Touch</a>
+    
 </section>
 
 <!------------------- Footer ------------------->
@@ -202,6 +203,20 @@ arrowRight.addEventListener('click',function(){
 
 
 startSlide();
+
+// scroll to top
+
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function scrollToTop() {
+  // Scroll to top logic
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+scrollToTopBtn.addEventListener("click", scrollToTop);
     
 </script>
 

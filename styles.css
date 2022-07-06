@@ -393,3 +393,17 @@ h3{
     }
     
 }
+    /*---------------- SCROLL TO TOP ---------------*/
+#scrollToTopBtn {
+    position: fixed;
+    right: 40px;
+    bottom: 120px;
+   
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 48px;
+    width: 48px;
+  }
